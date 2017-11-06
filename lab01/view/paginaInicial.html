@@ -1,0 +1,25 @@
+<div ng-controller="lab1Ctrl">
+    <input placeholder="nome do artista" ng-model="artista.nome">
+        <input placeholder="link para imagem do artista" ng-model="artista.imagem">
+        <button ng-click="adicionarArtistaAoSistema(artista)">adicionar</button>
+        
+        <div style="margin-top: 100px">
+            <input placeholder="nome da música" ng-model="musica.nome">
+            <input placeholder="artista da música" ng-model="musica.artista">
+            <input placeholder="álbum da música" ng-model="musica.album">
+            <input placeholder="ano de lançamento da música" ng-model="musica.anoDeLancamento">
+            <input placeholder="duração da música" ng-model="musica.duracao">
+            <button ng-click="adicionarMusicaAoSistema(musica)">adicionar musica</button>
+        </div>
+        
+        artistas: {{artistas}}
+        albuns: {{albuns}}
+        musicas: {{musicas}}
+        
+        <div style="margin-top: 250x; margin-bottom: 15px">
+            <input placeholder="busca" ng-model="caracteristica">
+            <button ng-click="fazerBusca(caracteristica)">o que vc deseja buscar</button>
+        </div>
+        {{filtro}}
+        <div style="margin-top: 5px" ng-repeat="artista in artistas | filter: filtro">{{artista}}</div>
+</div>
