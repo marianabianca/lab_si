@@ -1,0 +1,36 @@
+<div style="margin: 100px">
+    Artista: {{artista.nome}}
+    <img src="{{artista.imagem}}">
+    
+    <input ng-model="nota">
+    <button ng-click="adicionarNotaAoArtista(nota)">Adicionar nota</button>
+    
+    <input ng-model="musica">
+    <button ng-click="adicionarUltimaMusicaEscutada(musica)">Adicionar musica</button>
+    
+    <div ng-repeat="album in albunsDoArtista">{{album.nome}}</div>
+    
+    <!---
+            TODO:
+                REMOVER DOS FAVORITOS
+
+            TERMINADO:
+                MOSTRAR ALBUNS 
+                MOSTRAR ULTIMA MUSICA OUVIDA
+                MOSTRAR NOME DO ARTISTA
+                MOSTRAR IMAGEM
+
+                MOSTRAR NOTA DO ARTISTA
+                CAMPO PARA NOTA DO ARTISTA
+
+                CAMPO PARA A ULTIMA MUSICA ESCUTADA
+
+                ADICIONAR AOS FAVORITOS
+    --->
+    
+    <button ng-click="adicionarArtistaAosFavoritos()">adicionar aos favoritos</button>
+    
+    {{artista}}
+    
+    {{favoritos}}
+</div>

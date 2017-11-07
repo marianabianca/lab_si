@@ -16,4 +16,25 @@ angular.module("lab1").factory("albunsService", function (albumFactory) {
         }
     };
     
+    var getAlbunsDoArtista = function (nomeArtista) {
+        albunsDoArtista = [];
+        
+        for (var i in albuns) {
+            var album = albuns[i];
+            
+            if (album.artista == nomeArtista) {
+                albunsDoArtista.push(album);
+            }
+        }
+        
+        return albunsDoArtista;
+    };
+
+    return {
+        albuns: albuns,
+        criarAlbum: criarAlbum,
+        adicionarAlbum: adicionarAlbum,
+        getAlbunsDoArtista: getAlbunsDoArtista
+    };
+    
 });

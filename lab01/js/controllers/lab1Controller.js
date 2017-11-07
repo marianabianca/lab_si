@@ -1,7 +1,7 @@
-angular.module("lab1").controller("lab1Ctrl", function ($scope, sistema) {
+angular.module("lab1").controller("lab1Ctrl", function ($scope, musicasService, artistasService, albunsService) {
     
-    $scope.artistas = sistema.artistas;
-    $scope.albuns = sistema.albuns;
+    $scope.artistas = artistasService.artistas;
+    $scope.albuns = albunsService.albuns;
     $scope.filtro = "";
     
     $scope.fazerBusca = function (caracteristica) {
@@ -10,12 +10,12 @@ angular.module("lab1").controller("lab1Ctrl", function ($scope, sistema) {
     };
     
     $scope.adicionarArtistaAoSistema = function (artista) {
-        sistema.adicionarArtistaAoSistema(artista);
+        artistasService.adicionarArtistaAoSistema(artista);
         delete $scope.artista;
     };
     
     $scope.adicionarMusicaAoSistema = function (musica) {
-        sistema.adicionarMusicaAoSistema(musica);
+        musicasService.adicionarMusicaAoSistema(musica);
         delete $scope.musica;
     };
     

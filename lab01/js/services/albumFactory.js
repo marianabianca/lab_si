@@ -1,6 +1,6 @@
 angular.module("lab1").factory("albumFactory", function () {
     
-    var _criarAlbum = function (nomeAlbum, nomeArtista) {
+    var criarAlbum = function (nomeAlbum, nomeArtista) {
         var musicasVazio = {};
         var album = {
             nome: nomeAlbum,
@@ -12,7 +12,7 @@ angular.module("lab1").factory("albumFactory", function () {
     };
     
     return {
-      criarAlbum: _criarAlbum;  
+      criarAlbum: criarAlbum
     };
     
 });
