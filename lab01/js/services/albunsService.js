@@ -1,4 +1,4 @@
-angular.module("lab1").factory("albunsService", function (albumFactory) {
+angular.module("lab1").service("albunsService", function (albumFactory) {
     var albuns = {};
     
     var criarAlbum = albumFactory.criarAlbum;
@@ -13,7 +13,7 @@ angular.module("lab1").factory("albunsService", function (albumFactory) {
         if (!temAlbum(nomeAlbum)) {
             var copiaAlbum = angular.copy(album);
             albuns[nomeAlbum] = copiaAlbum;
-        }
+        };
     };
     
     var getAlbunsDoArtista = function (nomeArtista) {

@@ -2,11 +2,15 @@
     Artista: {{artista.nome}}
     <img src="{{artista.imagem}}">
     
-    <input ng-model="nota">
-    <button ng-click="adicionarNotaAoArtista(nota)">Adicionar nota</button>
+    <form ng-submit="adicionarNotaAoArtista(nota)">
+        <input ng-model="nota">
+        <button>Adicionar nota</button>
+    </form>
     
-    <input ng-model="musica">
-    <button ng-click="adicionarUltimaMusicaEscutada(musica)">Adicionar musica</button>
+    <form ng-submit="adicionarUltimaMusicaEscutada(musica)">
+        <input ng-model="musica">
+        <button>Adicionar musica</button>
+    </form>
     
     <div ng-repeat="album in albunsDoArtista">{{album.nome}}</div>
     

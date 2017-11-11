@@ -1,5 +1,7 @@
 angular.module("lab1").factory("musicasService", function (albunsService) {
     
+    var musicas = [];
+    
     var albuns = albunsService.albuns;
     var adicionarAlbum = albunsService.adicionarAlbum;
     
@@ -10,17 +12,23 @@ angular.module("lab1").factory("musicasService", function (albunsService) {
         
         if (!(nomeDaMusica in musicasDoAlbum)) {
             musicasDoAlbum[nomeDaMusica] = musica;
+            musicas.push(musica);
+            return false;
         } else {
+            return true;
             // MENSAGEM DE ERRO JA EXISTE A MUSICA
         }
     };
     
-    var adicionarMusicaAoSistema = function (musica) {
+    var adicionarMusicaAoSistema = function (musica, musicaJaExiste, albumJaExiste) {
         adicionarAlbum(musica.album, musica.artista);
-        adicionarMusicaAoAlbum(musica, musica.album);
+        musicaJaExiste = adicionarMusicaAoAlbum(musica, musica.album);
+        
+        return musicaJaExiste;
     };
     
     return {
+        musicas: musicas,
         adicionarMusicaAoAlbum: adicionarMusicaAoAlbum,
         adicionarMusicaAoSistema: adicionarMusicaAoSistema
     };

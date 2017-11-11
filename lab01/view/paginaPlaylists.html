@@ -1,0 +1,34 @@
+<div class="ui grid">
+        <div class="row">
+
+            <div class="four wide column"></div>
+
+            <div class="eight wide column caixa-grande margem30">
+                <h2>Suas playlists</h2>
+
+                <table ng-show="playlists.length > 0" class="ui selectable inverted table">
+                        <thead>
+                            <tr>
+                                <th>Playlist</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="playlist in playlists">
+                                <td>{{playlist.nome}}</td>
+                                <td>
+                                        <button ng-click="verMusicas(playlist.nome)" class="ui inverted basic button">Ver músicas</button>
+                                </td>
+                                <td>
+                                        <button ng-click="excluirPlaylist(playlist.nome)" class="ui inverted basic button">Excluir playlist</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+
+            <div class="four wide column"></div>
+
+        </div>
+</div>

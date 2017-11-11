@@ -1,5 +1,5 @@
 angular.module("lab1").config(function ($stateProvider, $urlRouterProvider) {
-    var funcione = {
+    var home = {
         name: "funcione",
         url: "/",
         controller: "lab1Ctrl",
@@ -18,9 +18,17 @@ angular.module("lab1").config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     };
+
+    var playlists = {
+        name: "playlists",
+        url: "/playlists",
+        templateUrl: "view/paginaPlaylists.html",
+        controller: "playlistsCtrl"
+    }
     
     $urlRouterProvider.otherwise('/');
     
-    $stateProvider.state(funcione);
+    $stateProvider.state(home);
     $stateProvider.state(artista);
+    $stateProvider.state(playlists);
 });

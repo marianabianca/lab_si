@@ -17,7 +17,9 @@ angular.module("lab1").factory("artistasService", function (albunsService) {
         if (!temArtista(artista.nome)) {
             var copiaArtista = angular.copy(artista);
             artistas.push(copiaArtista);
+            return false;
         } else {
+            return true;
             // MOSTRAR MENSAGEM DE ERRO ARTISTA JA EXISTE
         };
     };
