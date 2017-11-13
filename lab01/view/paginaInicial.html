@@ -52,6 +52,7 @@
                         <input placeholder="Link para imagem do artista" ng-model="playlist" ng-required="true">
                     </div>
                     <button class="ui button" style="margin: 2px">Criar playlist</button>
+                    <div class="ui yellow message" ng-show="playlistJaExiste">Playlist com o mesmo nome já existe no sistema.</div>
             </form>
             
         </div>
@@ -63,10 +64,12 @@
 <div class="barra-topo maior">
         <div class="ui equal width grid">
                 <div class="column margem-lados">
-                    <button class="ui button" style="margin: 2px">Artistas Favoritos</button>
+                     <a ui-sref="artistasFavoritos">
+                        <button class="ui button" style="margin: 2px">Artistas Favoritos</button>
+                    </a>
                 </div>
                 <div class="column margem-lados">
-                        <a ui-sref="playlists()">
+                        <a ui-sref="playlists">
                             <button class="ui button" style="margin: 2px">Ver playlists</button>
                         </a>
                 </div>
@@ -97,7 +100,7 @@
                         <td>{{artista.nome}}</td>
                         <td>
                             <a ui-sref="artista({nomeArtista: artista.nome})">
-                                <button class="ui inverted basic button">Ver artista</button>
+                                <button class="ui grey button">Ver artista</button>
                             </a>
                         </td>
                     </tr>
@@ -134,7 +137,11 @@
                             {{nomePlaylist}}
                         </td>
                         <td>
-                                <button ng-click="adicionarMusicaAPlaylist(musica, playlist)" class="ui inverted basic button">+</button>
+                                <button ng-click="adicionarMusicaAPlaylist(musica, playlist)" class="ui grey button" style="
+                                    font-size: 20px;
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
+                                ">+</button>
                         </td>
                     </tr>
                 </tbody>

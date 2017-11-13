@@ -10,6 +10,7 @@ angular.module("lab1").controller("lab1Ctrl", function ($scope, musicasService, 
     
     $scope.artistaJaExiste = false;
     $scope.musicaJaExiste = false;
+    $scope.playlistJaExiste = false;
     
     $scope.fazerBusca = function (caracteristica) {
         $scope.filtro = caracteristica;

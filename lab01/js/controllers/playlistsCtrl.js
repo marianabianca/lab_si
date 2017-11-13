@@ -2,4 +2,8 @@ angular.module("lab1").controller("playlistsCtrl", function ($scope, $state, pla
 
     $scope.playlists = playlistsService.playlists;
 
+    $scope.excluirPlaylist = function (nomePlaylist) {
+        playlistsService.excluirPlaylist(nomePlaylist);
+    }
+
 });

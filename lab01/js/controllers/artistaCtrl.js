@@ -1,6 +1,9 @@
 angular.module("lab1").controller("artistaCtrl", function ($scope, $state, artista, albunsService, artistasFavoritosService) {
     
     $scope.artista = artista;
+    $scope.albunsDoArtista = albunsService.getAlbunsDoArtista(artista.nome);
+    $scope.favoritos = artistasFavoritosService.artistasFavoritos;
+    $scope.ehFavorito = false;
     
     $scope.adicionarNotaAoArtista = function (nota) {
         artista.nota = nota;
@@ -12,15 +15,14 @@ angular.module("lab1").controller("artistaCtrl", function ($scope, $state, artis
         delete $scope.musica;
     }
     
-    $scope.albunsDoArtista = albunsService.getAlbunsDoArtista(artista.nome);
-    
     $scope.adicionarArtistaAosFavoritos = function () {
-      artistasFavoritosService.adicionarArtistaAosFavoritos($scope.artista);  
+      artistasFavoritosService.adicionarArtistaAosFavoritos($scope.artista);
+      $scope.ehFavorito = true;
     };
-    
-    
-    
-    
-    $scope.favoritos = artistasFavoritosService.artistasFavoritos;
+
+    $scope.excluirArtistaDosFavoritos = function () {
+        artistasFavoritosService.excluirArtista($scope.artista.nome);
+        $scope.ehFavorito = false;
+    }
     
 });
