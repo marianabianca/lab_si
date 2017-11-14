@@ -15,6 +15,7 @@ angular.module("lab1").factory("artistasService", function (albunsService) {
     
     var adicionarArtistaAoSistema = function (artista) {
         if (!temArtista(artista.nome)) {
+            artista.ehFavorito = false;
             var copiaArtista = angular.copy(artista);
             artistas.push(copiaArtista);
             return false;

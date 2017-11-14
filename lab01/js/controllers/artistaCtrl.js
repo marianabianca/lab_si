@@ -3,7 +3,7 @@ angular.module("lab1").controller("artistaCtrl", function ($scope, $state, artis
     $scope.artista = artista;
     $scope.albunsDoArtista = albunsService.getAlbunsDoArtista(artista.nome);
     $scope.favoritos = artistasFavoritosService.artistasFavoritos;
-    $scope.ehFavorito = false;
+    $scope.ehFavorito = artista.ehFavorito;
     
     $scope.adicionarNotaAoArtista = function (nota) {
         artista.nota = nota;

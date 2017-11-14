@@ -8,6 +8,7 @@ angular.module("lab1").factory("artistasFavoritosService", function () {
     
     var adicionarArtistaAosFavoritos = function (artista) {
         if (!temArtista(artista)) {
+            artista.ehFavorito = true;
             artistasFavoritos.push(artista);
         }
     };
@@ -16,6 +17,7 @@ angular.module("lab1").factory("artistasFavoritosService", function () {
         for (var index=0; index < artistasFavoritos.length; index++){
             var artista = artistasFavoritos[index];
             if (artista.nome == nomeArtista){
+                artista.ehFavorito = false;
                 artistasFavoritos.splice(index, 1);
             }
         }
